@@ -31,7 +31,12 @@ dev-dependencies = [
 
 [tool.rye.scripts]
 format = { chain = ["black src", "isort src"] }
-lint = { chain = ["black --check src", "flake8 src", "mypy src"] }
+lint = { chain = [
+    "black --check src",
+    "isort -c -v src",
+    "flake8 src",
+    "mypy src",
+] }
 test = { chain = ["python -m pytest tests"] }
 
 [tool.hatch.metadata]
