@@ -2,7 +2,7 @@
 name = "untitled"
 version = "0.1.0"
 dependencies = []
-requires-python = ">= 3.8"
+requires-python = ">= 3.11"
 
 [build-system]
 requires = ["hatchling"]
@@ -11,32 +11,26 @@ build-backend = "hatchling.build"
 [tool.black]
 line-length = 120
 
-[tool.isort]
-line_length = 120
-multi_line_output = 3
-include_trailing_comma = true
-use_parentheses = true
+[tool.ruff]
+line-length = 120
+select = ["ALL"]
+ignore = ["CPY", "EXE", "T20", "E203", "E501"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
 
 [tool.rye]
 managed = true
 dev-dependencies = [
     "black~=23.3.0",
-    "isort~=5.12.0",
-    "flake8~=5.0.4",
-    "flake8-annotations~=2.9.1",
-    "pep8-naming~=0.13.3",
-    "mypy~=1.3.0",
     "pytest~=7.3.2",
+    "ruff>=0.0.287",
+    "mypy>=1.5.1",
 ]
 
 [tool.rye.scripts]
-format = { chain = ["black src", "isort src"] }
-lint = { chain = [
-    "black --check src",
-    "isort -c -v src",
-    "flake8 src",
-    "mypy src",
-] }
+format = { chain = ["black src", "ruff check --fix src"] }
+lint = { chain = ["black --check src", "ruff check src", "mypy src"] }
 test = { chain = ["python -m pytest tests"] }
 
 [tool.hatch.metadata]

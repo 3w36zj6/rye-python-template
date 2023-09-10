@@ -1,7 +1,7 @@
 {
   "editor.codeActionsOnSave": {
-    // isort
-    "source.organizeImports": true
+    "source.fixAll.ruff": true,
+    "source.organizeImports.ruff": true
   },
   "editor.formatOnSave": true,
   // Tester
@@ -11,7 +11,7 @@
   // Pylance
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "strict",
-  "mypy-type-checker.importStrategy": "fromEnvironment",
-  "flake8.importStrategy": "fromEnvironment",
-  "black-formatter.importStrategy": "fromEnvironment"
+  "black-formatter.importStrategy": "fromEnvironment",
+  "ruff.importStrategy": "fromEnvironment",
+  "mypy-type-checker.importStrategy": "fromEnvironment"
 }
