@@ -3,6 +3,9 @@
     "source.fixAll.ruff": true,
     "source.organizeImports.ruff": true
   },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
   "editor.formatOnSave": true,
   // Tester
   "python.testing.pytestArgs": ["tests"],
