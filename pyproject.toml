@@ -16,6 +16,9 @@ line-length = 120
 select = ["ALL"]
 ignore = ["CPY", "EXE", "T20", "E203", "E501"]
 
+[tool.mypy]
+strict = true
+
 [tool.ruff.pydocstyle]
 convention = "google"
 
