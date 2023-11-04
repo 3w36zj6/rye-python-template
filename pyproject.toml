@@ -14,7 +14,13 @@ line-length = 120
 [tool.ruff]
 line-length = 120
 select = ["ALL"]
-ignore = ["EXE", "T20", "E501", "D203", "D213"]
+ignore = [
+    "EXE",  # flake8-executable
+    "T20",  # flake8-print
+    "E501", # line-too-long
+    "D203", # one-blank-line-before-class
+    "D213", # multi-line-summary-second-line
+]
 
 [tool.mypy]
 strict = true
