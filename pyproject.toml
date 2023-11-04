@@ -20,6 +20,7 @@ ignore = [
     "E501", # line-too-long
     "D203", # one-blank-line-before-class
     "D213", # multi-line-summary-second-line
+    "S101", # assert
 ]
 
 [tool.mypy]
